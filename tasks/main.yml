@@ -1,0 +1,8 @@
+---
+# tasks file for talltechdude.proxmox_iso
+
+- name: "Downloading ISO from {{ iso_url }}"
+  run_once: "{{ pve_iso_shared_storage }}"
+  get_url:                                                        
+    url: "{{ iso_url }}"
+    dest: "{{ pve_iso_path }}/{{ iso_name }}.iso"
